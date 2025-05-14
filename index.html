@@ -336,8 +336,8 @@
                     .get();
                 const dispatchData = snapshot.docs.map(doc => doc.data());
                 const filtered = dispatchData.filter(item => {
-                    const company = item.company || '';
-                    return company.includes('라면');
+                    const itemName = item.itemName || '';
+                    return itemName.includes('라면');
                 });
                 renderDispatchList(filtered);
             } catch (error) {
@@ -376,7 +376,7 @@
                 const todayData = rows
                     .filter(cols => {
                         const date = cols[0] ? cols[0].trim() : '';
-                        const company = cols[1] ? cols[1].trim() : '';
+                        const itemName = cols[4] ? cols[4].trim() : '';
                         return date === today && itemName.includes('라면');
                     })
                     .map(cols => ({
