@@ -151,6 +151,15 @@
             color: #888;
             font-size: 13px;
         }
+        .dispatch-list-row-bottom .driver-name {
+            color: #888;
+            font-size: 13px;
+        }
+        .remarks-value {
+            color: #FF9966;
+            margin-top: 2px;
+            font-size: 14px;
+        }
         .copy-btn {
             background: #4CAF50;
             color: white;
@@ -431,7 +440,7 @@
                             <a href="tel:${item.contact}" class="phone-link" onclick="event.stopPropagation();">${item.contact}</a>
                             <span class="driver-name">${item.driverName}</span>
                         </div>
-                        <div>${item.remarks || ''}</div>
+                        <div class="remarks-value">${item.remarks || ''}</div>
                     </div>
                 </div>
             `).join('');
@@ -454,7 +463,7 @@
                         <div class="modal-row"><span class="modal-label">차종</span><span class="modal-value">${data.cargo || ''}</span></div>
                         <div class="modal-row"><span class="modal-label">연락처</span><span class="modal-value"><a href="tel:${data.contact || ''}" class="phone-link">${data.contact || ''}</a></span></div>
                         <div class="modal-row"><span class="modal-label">이름</span><span class="modal-value">${data.driverName || ''}</span></div>
-                        <div class="modal-row"><span class="modal-label">수량</span><span class="modal-value">${data.remarks || ''}</span></div>
+                        <div class="modal-row"><span class="modal-label">수량</span><span class="modal-value" style="color: #FF9966;">${data.remarks || ''}</span></div>
                     </div>
                 </div>
             `;
@@ -484,8 +493,8 @@
                             <span class="cargo">${item.cargo || ''}</span>
                             <a href="tel:${item.contact || ''}" class="phone-link" onclick="event.stopPropagation();">${item.contact || ''}</a>
                             <span class="driver-name">${item.driverName || ''}</span>
-                            <span class="driver-name">수량: ${item.remarks || ''}</span>
                         </div>
+                        <div class="remarks-value">${item.remarks || ''}</div>
                     </div>
                 </div>
             `).join('');
@@ -509,7 +518,7 @@
                         <div class="modal-row"><span class="modal-label">차종</span><span class="modal-value">${data.cargo || ''}</span></div>
                         <div class="modal-row"><span class="modal-label">연락처</span><span class="modal-value"><a href="tel:${data.contact || ''}" class="phone-link">${data.contact || ''}</a></span></div>
                         <div class="modal-row"><span class="modal-label">이름</span><span class="modal-value">${data.driverName || ''}</span></div>
-                        <div class="modal-row"><span class="modal-label">수량</span><span class="modal-value">${data.remarks || ''}</span></div>
+                        <div class="modal-row"><span class="modal-label">수량</span><span class="modal-value" style="color: #FF9966;">${data.remarks || ''}</span></div>
                     </div>
                 </div>
             `;
