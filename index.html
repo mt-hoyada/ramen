@@ -275,8 +275,10 @@
         </button>
         <h2 style="margin-top:20px; font-size:20px; color:#388e3c;">오늘 배차 내역</h2>
         <div id="todayDispatchList" class="dispatch-list"></div>
+        <!-- 최근 5일 배차 내역 주석처리
         <h2 style="margin-top:32px; font-size:20px; color:#388e3c;">최근 5일 배차 내역</h2>
         <div id="dispatchList" class="dispatch-list"></div>
+        -->
         <div id="modalBg" style="display:none;"></div>
     </div>
 
@@ -327,6 +329,7 @@
         }
 
         // 최근 5일 데이터 조회
+        /* 주석처리
         async function fetchLastFiveDaysData() {
             try {
                 const fiveDaysAgo = getLastNDaysKSTString(5);
@@ -345,11 +348,12 @@
                 document.getElementById('dispatchList').innerHTML = '<div style="padding:20px; text-align:center; color:#888;">최근 5일 배차 내역을 불러오지 못했습니다.</div>';
             }
         }
+        */
 
         // DOMContentLoaded 시점에 실행
         document.addEventListener('DOMContentLoaded', function() {
             fetchTodayDispatchData();  // 오늘 데이터 먼저 로드
-            fetchLastFiveDaysData();   // 그 다음 최근 5일 데이터 로드
+            // fetchLastFiveDaysData();   // 그 다음 최근 5일 데이터 로드 (주석처리)
         });
 
         // ====== 구글 시트 정보(한 번만 선언) ======
@@ -426,8 +430,8 @@
                             <span class="cargo">${item.cargo}</span>
                             <a href="tel:${item.contact}" class="phone-link" onclick="event.stopPropagation();">${item.contact}</a>
                             <span class="driver-name">${item.driverName}</span>
-                            <span class="driver-name">수량: ${item.remarks}</span>
                         </div>
+                        <div>${item.remarks || ''}</div>
                     </div>
                 </div>
             `).join('');
@@ -515,7 +519,7 @@
         // 새로고침 함수 추가
         function refreshData() {
             fetchTodayDispatchData();  // 오늘 데이터 새로고침
-            fetchLastFiveDaysData();   // 최근 5일 데이터 새로고침
+            // fetchLastFiveDaysData();   // 최근 5일 데이터 새로고침 (주석처리)
         }
     </script>
 </body>
